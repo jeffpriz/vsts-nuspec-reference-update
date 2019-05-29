@@ -1,0 +1,17 @@
+<?xml version="1.0" ?> 
+<package>
+    <metadata>
+        <id>test-spec-file-update</id>
+        <version>1.0.1</version>
+        <title>Just a test file</title>
+        <authors>Jeff</authors>
+        <description></description>
+        <dependencies>
+            <dependency id="SomeMadeupNugetPkg" version="1.0.2" />
+            <dependency id="testPkg" version="3.2.2" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="test.dll" target="lib\Net45\test.dll">
+    </files>
+</package>

@@ -1,0 +1,38 @@
+{
+  "name": "vsts-release-web-test",
+  "version": "1.0.0",
+  "description": "This TFS & VSTS Release task can be used to validate that the website you deployed is available and running ",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc.cmd",
+    "compile": "npm install && npm build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "TFS",
+    "VSTS",
+    "Release"
+  ],
+  "author": "Jeff Przylucki",
+  "license": "GPL-3.0",
+  "repository": {
+    "url": "https://github.com/jeffpriz/vsts-nuspec-reference-update"
+  },
+  "devDependencies": {
+    "typescript": "^2.4.2",
+    "@types/node": "^6.0.31"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "config/"
+  ],
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.8.0",
+    "graceful-fs": "^4.1.15",
+    "reflect-metadata": "^0.1.10",
+    "tslib": "^1.9.3",
+    "xml-parser": "^1.2.1",
+    "xmldom": "^0.1.27"
+  }
+}

@@ -1,0 +1,62 @@
+{
+    "manifestVersion": 1,
+    "id": "nuspec-reference-update",
+    "name": "Nuspec NuGet Reference Update",
+    "version": "0.0.1",
+    "publisher": "OneLuckiDev",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "images/nuspec_icon_small.png"
+    },
+    "description": "Updates the NuGet References in the Nuspec file based on the NuGet packages that the project references.  Keeps references in Sync, so you don't have to manually update Nuspec.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "files": [
+        {
+            "path": "NuspecUpdate"
+        },
+        {
+            "path": "images/nuspec_icon_small.png",
+            "addressable": true
+        }
+    ],
+    "badges": [
+        {
+            
+            "href": "https://oneluckidev.visualstudio.com/OneLuckiDev/_apis/build/status/vsts-release-web-test",
+            "uri": "https://oneluckidev.visualstudio.com/OneLuckiDev/_apis/build/status/vsts-release-web-test",
+            "description": "Build for this Task run in Azure DevOps"
+        }
+    ],
+    "branding": {
+        "color": "rgb(27,160,225)",
+        "theme": "dark"
+    },
+    "contributions": [
+        {
+            "id": "nuspec-reference-update",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "NuspecRefUpdate"
+            }
+        }
+    ],
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/jeffpriz/vsts-nuspec-reference-update"
+    },
+    "public": true
+}
