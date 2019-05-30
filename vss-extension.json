@@ -28,8 +28,8 @@
     "badges": [
         {
             
-            "href": "https://oneluckidev.visualstudio.com/OneLuckiDev/_apis/build/status/vsts-release-web-test",
-            "uri": "https://oneluckidev.visualstudio.com/OneLuckiDev/_apis/build/status/vsts-release-web-test",
+            "href": "https://oneluckidev.visualstudio.com/OneLuckiDev/_apis/build/status/vsts-nuspec-ref-update",
+            "uri": "https://oneluckidev.visualstudio.com/OneLuckiDev/_apis/build/status/vsts-nuspec-ref-update",
             "description": "Build for this Task run in Azure DevOps"
         }
     ],
@@ -45,7 +45,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "NuspecRefUpdate"
+                "name": "NuspecUpdate"
             }
         }
     ],
