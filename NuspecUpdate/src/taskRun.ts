@@ -186,6 +186,11 @@ function getDependencyFromItemGroup(itemgroupElement:any):dep.dependency[]
                 groupDependencies.push(thisDependency);
 
             }
+            else if(thisPkgRef.hasAttribute("Include") && thisPkgRef.getElementsByTagName("Version"))
+            {
+                var thisDependency:dep.dependency = new dep.dependency(thisPkgRef.getAttribute("Include"),thisPkgRef.getElementsByTagName("Version")[0].firstChild.nodeValue);
+                groupDependencies.push(thisDependency);
+            }
             
         }
     }
