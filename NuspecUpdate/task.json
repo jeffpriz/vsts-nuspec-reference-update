@@ -6,7 +6,7 @@
     "author": "Jeff Przylucki",  
     "category": "Build",
     "visibility": [
-      "Release"
+      "Build"
     ],
     "demands": [],
     "version": {
@@ -14,7 +14,7 @@
       "Minor": "0", 
       "Patch": "1"
     },
-    "minimumAgentVersion": "1.95.0",
+    "minimumAgentVersion": "2.125.1",
     "instanceNameFormat": "Nuspec update $(nuspecFile)",
     "groups": [
         {
