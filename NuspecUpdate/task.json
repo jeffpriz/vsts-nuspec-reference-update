@@ -11,8 +11,8 @@
     "demands": [],
     "version": {
       "Major": "0",
-      "Minor": "0", 
-      "Patch": "1"
+      "Minor": "1", 
+      "Patch": "0"
     },
     "minimumAgentVersion": "2.125.1",
     "instanceNameFormat": "Nuspec update $(nuspecFile)",
