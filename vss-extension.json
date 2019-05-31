@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
     "id": "nuspec-reference-update",
-    "name": "Nuspec NuGet Reference Update",
-    "version": "0.1.0",
+    "name": "Nuspec NuGet Dependency Update",
+    "version": "0.1.1",
     "publisher": "OneLuckiDev",
     "targets": [
         {
@@ -22,6 +22,10 @@
         },
         {
             "path": "images/nuspec_icon_small.png",
+            "addressable": true
+        },
+        {
+            "path": "images/inputScreen.png",
             "addressable": true
         }
     ],
