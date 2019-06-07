@@ -205,11 +205,11 @@ function ProcessNuspecData(nuspecXMLObj:any, projectDependencies:dep.dependency[
 {
     if(nuspecXMLObj.documentElement != null)
     {
-        if(nuspecXMLObj.documentElement.hasChildNodes("metadata"))
+        if(nuspecXMLObj.documentElement.getElementsByTagName("metadata").length > 0)
         {
             
             var nuspecMetadataElement:any = nuspecXMLObj.documentElement.getElementsByTagName("metadata");
-            if(nuspecMetadataElement[0].hasChildNodes("dependencies"))
+            if(nuspecMetadataElement[0].getElementsByTagName("dependencies").length > 0)
             {
                 tl.debug("The nuspec currently has a dependencies node, we will clear it out to place project dependencies in");
                 var dependenciesElement:any = nuspecMetadataElement[0].getElementsByTagName("dependencies");

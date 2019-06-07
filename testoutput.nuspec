@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0"?> 
 <package>
     <metadata>
         <id>NuGetSampleTest</id>
@@ -6,8 +6,8 @@
         <title>Just a test file</title>
         <authors>Jeff</authors>
         <description>this is only a test</description>
-    </metadata>
+    <dependencies><dependency id="EntityFramework" version="6.2.0"/><dependency id="Newtonsoft.Json" version="12.0.2"/></dependencies></metadata>
     <files>
-        <file src="NugetSampleTest.dll" target="lib\Net45\test.dll" />
+        <file src="NugetSampleTest.dll" target="lib\Net45\test.dll"/>
     </files>
 </package>
