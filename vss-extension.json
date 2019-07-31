@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "nuspec-reference-update",
     "name": "Nuspec NuGet Dependency Update",
-    "version": "0.1.2",
+    "version": "1.0.0",
     "publisher": "OneLuckiDev",
     "targets": [
         {

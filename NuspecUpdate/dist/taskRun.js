@@ -66,6 +66,7 @@ function DoWork(projectFileName, nuspecFileName, overwriteExistingFile) {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 4, , 5]);
+                    console.log("opening project files ... ");
                     return [4 /*yield*/, fileData.OpenFile(projectFileName)];
                 case 2:
                     projectFileData = _a.sent();
@@ -122,18 +123,18 @@ exports.DoWork = DoWork;
 //ProcessProjectXMLFile -- the goal is to extract all of the Pacakge Reference dependencies from this project to use to keep the Nuspec up to date
 function ProcessProjectXMLFile(projectXMLObj) {
     var dependencies = new Array();
-    tl.debug("Processing Project File for Item Groups and PacakgeReferences");
+    console.log("Processing Project File for Item Groups and PacakgeReferences");
     if (projectXMLObj.documentElement != null) {
         if (projectXMLObj.documentElement.hasChildNodes("ItemGroup")) {
             var projectItemGroups = projectXMLObj.documentElement.getElementsByTagName("ItemGroup");
-            tl.debug("There were ItemGroups found: " + projectItemGroups.length.toString());
+            console.log("There were ItemGroups found: " + projectItemGroups.length.toString());
             for (var ndx = 0; ndx < projectItemGroups.length; ndx++) {
                 var thisItemGroup = projectItemGroups[ndx];
                 dependencies = dependencies.concat(getDependencyFromItemGroup(thisItemGroup));
             }
         }
         else {
-            tl.debug("Project File does not contain any ItemGroup elements");
+            console.log("Project File does not contain any ItemGroup elements");
         }
     }
     else {
@@ -149,13 +150,20 @@ function getDependencyFromItemGroup(itemgroupElement) {
         var packagReferenceElements = itemgroupElement.getElementsByTagName("PackageReference");
         for (var ndx = 0; ndx < packagReferenceElements.length; ndx++) {
             var thisPkgRef = packagReferenceElements[ndx];
+            var thisDependency;
             if (thisPkgRef.hasAttribute("Include") && thisPkgRef.hasAttribute("Version")) {
-                var thisDependency = new dep.dependency(thisPkgRef.getAttribute("Include"), thisPkgRef.getAttribute("Version"));
+                thisDependency = new dep.dependency(thisPkgRef.getAttribute("Include"), thisPkgRef.getAttribute("Version"));
                 groupDependencies.push(thisDependency);
             }
             else if (thisPkgRef.hasAttribute("Include") && thisPkgRef.getElementsByTagName("Version")) {
-                var thisDependency = new dep.dependency(thisPkgRef.getAttribute("Include"), thisPkgRef.getElementsByTagName("Version")[0].firstChild.nodeValue);
+                thisDependency = new dep.dependency(thisPkgRef.getAttribute("Include"), thisPkgRef.getElementsByTagName("Version")[0].firstChild.nodeValue);
                 groupDependencies.push(thisDependency);
+            }
+            try {
+                console.log("Adding Dependency " + thisDependency.id + " ver " + thisDependency.version);
+            }
+            catch (err) {
+                tl.debug("didn't get a valid dependency from the project line.. index:" + ndx.toString());
             }
         }
     }
@@ -166,7 +174,7 @@ function ProcessNuspecData(nuspecXMLObj, projectDependencies) {
         if (nuspecXMLObj.documentElement.getElementsByTagName("metadata").length > 0) {
             var nuspecMetadataElement = nuspecXMLObj.documentElement.getElementsByTagName("metadata");
             if (nuspecMetadataElement[0].getElementsByTagName("dependencies").length > 0) {
-                tl.debug("The nuspec currently has a dependencies node, we will clear it out to place project dependencies in");
+                console.log("The nuspec currently has a dependencies node, we will clear it out to place project dependencies in");
                 var dependenciesElement = nuspecMetadataElement[0].getElementsByTagName("dependencies");
                 while (dependenciesElement[0].hasChildNodes()) {
                     dependenciesElement[0].removeChild(dependenciesElement[0].firstChild);
@@ -178,7 +186,7 @@ function ProcessNuspecData(nuspecXMLObj, projectDependencies) {
                 tl.debug(dependenciesElement.toString());
             }
             else {
-                tl.debug("the nuspec does not have a dependencies node, will create one to place project dependencies in");
+                console.log("the nuspec does not have a dependencies node, will create one to place project dependencies in");
                 var dependenciesElement = nuspecXMLObj.createElement("dependencies");
                 nuspecMetadataElement[0].appendChild(dependenciesElement);
             }
@@ -207,7 +215,7 @@ function Run() {
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    console.log("Reading JSON file to generate variables for future tasks... ");
+                    console.log("Validating input values...");
                     validateInputs();
                     fileContent = "";
                     _a.label = 1;
