@@ -1,0 +1,13 @@
+<?xml version="1.0" ?> 
+<package>
+    <metadata>
+        <id>NuGetSampleTest</id>
+        <version>1.0.1</version>
+        <title>Just a test file</title>
+        <authors>Jeff</authors>
+        <description>this is only a test</description>
+    </metadata>
+    <files>
+        <file src="NugetSampleTest.dll" target="lib\Net45\test.dll" />
+    </files>
+</package>
