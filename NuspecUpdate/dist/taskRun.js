@@ -85,24 +85,28 @@ function DoWork(projectFileName, nuspecFileName, overwriteExistingFile) {
                     tl.debug("found " + projectPackageReferences.length.toString() + " package reference(s)");
                     _a.label = 6;
                 case 6:
-                    _a.trys.push([6, 10, , 11]);
-                    if (!(projectPackageReferences.length > 0)) return [3 /*break*/, 9];
+                    _a.trys.push([6, 9, , 10]);
                     return [4 /*yield*/, fileData.OpenFile(nuspecFileName)];
                 case 7:
                     nuspecFileData = _a.sent();
                     return [4 /*yield*/, GetXMLFileData(nuspecFileData)];
                 case 8:
                     nuspecXMLObj = _a.sent();
-                    updatedNuspec = ProcessNuspecData(nuspecXMLObj, projectPackageReferences);
-                    _a.label = 9;
-                case 9: return [3 /*break*/, 11];
-                case 10:
+                    if (projectPackageReferences.length > 0) {
+                        updatedNuspec = ProcessNuspecData(nuspecXMLObj, projectPackageReferences);
+                    }
+                    else {
+                        //there were no nuget references in the project
+                        updatedNuspec = ProcessNuspecData(nuspecXMLObj, projectPackageReferences);
+                    }
+                    return [3 /*break*/, 10];
+                case 9:
                     err_2 = _a.sent();
                     success = false;
                     tl.error("Could not successfully process the Nuspec data");
                     tl.error(err_2);
-                    return [3 /*break*/, 11];
-                case 11:
+                    return [3 /*break*/, 10];
+                case 10:
                     if (success) {
                         fileOutput = nuspecFileName;
                         if (!overwriteExistingFile) {
