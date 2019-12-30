@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0"?>
 <package>
   <metadata>
-    <id>Alliant.net.exception</id>
+    <id>old.net.exception</id>
     <version>1.0.0</version>
-    <title>Alliant API Exception</title>
-    <authors>Alliant Credit Union</authors>
-    <owners>Alliant Credit Union</owners>
+    <title>old API Exception</title>
+    <authors>One Lucki Dev</authors>
+    <owners>One Lucki Dev</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Alliant API Exception component</description>
-    <releaseNotes>Alliant API Exception</releaseNotes>
+    <description>OLD API Exception component</description>
+    <releaseNotes>OLD API Exception</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <dependencies>
     </dependencies>

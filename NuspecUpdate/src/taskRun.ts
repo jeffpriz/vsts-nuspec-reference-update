@@ -98,12 +98,9 @@ export async function DoWork(projectFileName:string, nuspecFileName:string, over
     var updatedNuspec:any;
     try 
     {
-        if(projectPackageReferences.length > 0)
-        {
-            var nuspecFileData:string = await fileData.OpenFile(nuspecFileName);
-            var nuspecXMLObj:any = await GetXMLFileData(nuspecFileData);
-            updatedNuspec =  ProcessNuspecData(nuspecXMLObj, projectPackageReferences);
-        }    
+        var nuspecFileData:string = await fileData.OpenFile(nuspecFileName);
+        var nuspecXMLObj:any = await GetXMLFileData(nuspecFileData);
+        updatedNuspec =  ProcessNuspecData(nuspecXMLObj, projectPackageReferences);
     }
     catch(err)
     {
