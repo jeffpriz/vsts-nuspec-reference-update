@@ -92,13 +92,7 @@ function DoWork(projectFileName, nuspecFileName, overwriteExistingFile) {
                     return [4 /*yield*/, GetXMLFileData(nuspecFileData)];
                 case 8:
                     nuspecXMLObj = _a.sent();
-                    if (projectPackageReferences.length > 0) {
-                        updatedNuspec = ProcessNuspecData(nuspecXMLObj, projectPackageReferences);
-                    }
-                    else {
-                        //there were no nuget references in the project
-                        updatedNuspec = ProcessNuspecData(nuspecXMLObj, projectPackageReferences);
-                    }
+                    updatedNuspec = ProcessNuspecData(nuspecXMLObj, projectPackageReferences);
                     return [3 /*break*/, 10];
                 case 9:
                     err_2 = _a.sent();

@@ -7,7 +7,7 @@ import { deprecate } from 'util';
 
 var validInputs:boolean = false;
 var input_nuspecFile:string = "";
-var input_projectFile:string="";
+var input_projectFile:string= "";
 
 Run();
 
@@ -22,8 +22,6 @@ function validateInputs()
     validInputs = true;
     try {
         input_nuspecFile = tl.getPathInput('nuspecFile',true);
-        
-
     }
     catch(ex)
     {
@@ -33,8 +31,6 @@ function validateInputs()
 
     try {
         input_projectFile = tl.getPathInput('projectFile',true);
-        
-
     }
     catch(ex)
     {

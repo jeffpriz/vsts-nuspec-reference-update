@@ -28,7 +28,7 @@
     "config/"
   ],
   "dependencies": {
-    "azure-pipelines-task-lib": "^2.8.0",
+    "azure-pipelines-task-lib": "2.8.0",
     "graceful-fs": "^4.1.15",
     "reflect-metadata": "^0.1.10",
     "tslib": "^1.9.3",
