@@ -33,6 +33,6 @@
     "reflect-metadata": "^0.1.10",
     "tslib": "^1.9.3",
     "xml-parser": "^1.2.1",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.6.0"
   }
 }
